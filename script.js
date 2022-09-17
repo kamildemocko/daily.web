@@ -34,7 +34,6 @@ body = document.querySelector("body");
 imgs.forEach((el) => {
   el.addEventListener("click", (e) => {
     picture_path = e.composedPath()[0];
-    console.log(picture_path)
     if (picture_path === "img.modal") return;
 
     modalImg.src = picture_path.src;
