@@ -16,12 +16,12 @@ buttons_expand.forEach((butt) => {
 const theverge2 = document.querySelector("div.theverge2");
 const rtvs2 = document.querySelector("div.rtvs2");
 
-if (theverge2 && !theverge2.innerHTML) {
-  theverge2.style.display = "none";
+if (!theverge2.innerHTML) {
+  button_theverge.style.display = "none";
 }
 
-if (rtvs2 && !rtvs2.innerHTML) {
-  rtvs2.style.display = "none";
+if (!rtvs2.innerHTML) {
+  button_rtvs.style.display = "none";
 }
 
 // modal
@@ -40,17 +40,17 @@ imgs.forEach((el) => {
     modal.classList.toggle("hidden");
     modalImg.classList.toggle("hidden");
 
+    body.addEventListener("keydown", (e) => {
+      console.log(e);
+      if (e.keyCode === 27) {
+        modal.classList.add("hidden");
+        modalImg.classList.add("hidden");
+      }
+    });
+
     modalDiv.addEventListener("click", () => {
       modal.classList.add("hidden");
       modalImg.classList.add("hidden");
     });
   });
-});
-
-body.addEventListener("keydown", (e) => {
-  console.log(e);
-  if (e.keyCode === 27) {
-    modal.classList.add("hidden");
-    modalImg.classList.add("hidden");
-  }
 });
