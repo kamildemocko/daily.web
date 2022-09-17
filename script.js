@@ -17,11 +17,11 @@ const theverge2 = document.querySelector("div.theverge2");
 const rtvs2 = document.querySelector("div.rtvs2");
 
 if (theverge2 && !theverge2.innerHTML) {
-  button_theverge.style.display = "none";
+  theverge2.style.display = "none";
 }
 
 if (rtvs2 && !rtvs2.innerHTML) {
-  button_rtvs.style.display = "none";
+  rtvs2.style.display = "none";
 }
 
 // modal
@@ -34,6 +34,7 @@ body = document.querySelector("body");
 imgs.forEach((el) => {
   el.addEventListener("click", (e) => {
     picture_path = e.composedPath()[0];
+    console.log(picture_path)
     if (picture_path === "img.modal") return;
 
     modalImg.src = picture_path.src;
